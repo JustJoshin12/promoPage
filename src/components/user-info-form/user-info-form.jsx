@@ -44,7 +44,7 @@ export const UserInfoForm = () => {
           <h2 className="mt-6 text-center text-xl md:text-2xl xl:text-3xl font-bold leading-9 tracking-tight text-gray-900">
             Pre-Register 
           </h2>
-          <p className="pt-6 font-semibold">We'd love to hear from you! Share your ideas for things you'd wish to see.</p>
+          <p className="pt-6 font-semibold px-4 md:px-0">We'd love to hear from you! Share your ideas for things you'd wish to see.</p>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">

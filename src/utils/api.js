@@ -2,7 +2,7 @@ const checkResponse = (res) => {
     return res.ok ? res.json() : Promise.reject(res.status);
   };
 
-  const baseUrl = "https://38f8-67-165-141-227.ngrok-free.app";
+  const baseUrl = "https://87ec-67-165-141-227.ngrok-free.app";
 
   export const userInformationApi = ({firstName,lastName,email,comment}) => {
     return fetch(`${baseUrl}/Promo`,{
