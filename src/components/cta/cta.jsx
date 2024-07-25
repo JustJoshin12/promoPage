@@ -37,7 +37,7 @@ export const CtaSection = () => {
               />
             </div>
             <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-              <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
+              <div className="order-first hidden sm:flex w-64 flex-none justify-end self-end lg:w-auto">
                 <Image
                   alt=""
                   src="/images/ctaImages/gaming.jpg"

@@ -21,7 +21,7 @@ const UserAccountComponent = () => {
     <div className="h-full w-full">
       <Image
         alt="image"
-        src="/images/loginScreenShot.png"       
+        src="/images/featureImages/loginScreenShot.png"       
         className="w-92 h-full"
       />
     </div>
@@ -33,7 +33,7 @@ const KanbanComponent = () => {
     <div className="h-full w-full">
     <Image
       alt="image"
-      src="/images/newsScreenShot.png"
+      src="/images/featureImages/newsScreenShot.png"
       className="w-92 h-full"
     />
   </div>
@@ -46,7 +46,7 @@ const GanttComponent = () => {
     <div className="h-full w-full">
       <Image
         alt="image"
-        src="/images/eventSubmitScreenShot.png"
+        src="/images/featureImages/eventSubmitScreenShot.png"
         width={500}
         height={420}
         className="w-92 h-full"
@@ -60,7 +60,7 @@ const DocumentationComponent = () => {
     <div className="h-full w-full">
     <Image
       alt="image"
-      src="/images/eventFinderScreenShot.png"
+      src="/images/featureImages/eventFinderScreenShot.png"
       width={500}
       height={420}
       className="w-92 h-full"
