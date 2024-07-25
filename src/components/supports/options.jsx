@@ -119,7 +119,7 @@ export const OPTIONS = [
     ),
   },
   {
-    title: "Lack of Information",
+    title: "Information Hub",
     Content: () => (
       <Testimonial
         imgSrc="/images/animeIconImages/icon7.jpg"
@@ -133,7 +133,7 @@ export const OPTIONS = [
     Content: () => (
       <Testimonial
         imgSrc="/images/animeIconImages/icon6.jpg"
-        name="User Reviews."
+        name="User Reviews"
         content="Read reviews from other attendees to know what to expect."
       />
     ),

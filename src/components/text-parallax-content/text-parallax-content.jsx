@@ -26,7 +26,7 @@ export const TextParallaxContentExample = () => {
       >
         <ExampleContent
           title="Excellence in Every Detail"
-          context="we are committed to delivering the highest quality experience for our users. We never compromise on our standards, ensuring that every event, update, and interaction meets the expectations of our vibrant anime community."
+          context="We are committed to delivering the highest quality experience for our users. We never compromise on our standards, ensuring that every event, update, and interaction meets the expectations of our vibrant anime community."
         />
       </TextParallaxContent>
       <TextParallaxContent

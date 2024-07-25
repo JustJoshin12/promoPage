@@ -118,7 +118,7 @@ export const UserInfoForm = () => {
                   htmlFor="comment"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Leave your idea here
+                  Leave your feedback here
                 </label>
                 <div className="mt-2">
                   <textarea

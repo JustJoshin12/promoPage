@@ -1,18 +1,4 @@
 import React from "react";
-import { AiFillBug } from "react-icons/ai";
-import { BsFillCursorFill } from "react-icons/bs";
-import {
-  FiAlignLeft,
-  FiAnchor,
-  FiArrowRight,
-  FiCheck,
-  FiChevronDown,
-  FiChevronRight,
-  FiClock,
-  FiEdit,
-  FiEye,
-  FiItalic,
-} from "react-icons/fi";
 import { Image } from "../shared/image";
 
 const UserAccountComponent = () => {
