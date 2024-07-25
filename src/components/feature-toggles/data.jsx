@@ -20,7 +20,7 @@ const UserAccountComponent = () => {
     <div className="h-full w-full">
       <Image
         alt="image"
-        src="/images/featureImages/loginScreenShot1.png"
+        src="/images/featureImages/loginScreenshot1.png"
         className="w-92 h-full"
         width={500}
         height={420}
@@ -34,7 +34,7 @@ const KanbanComponent = () => {
     <div className="h-full w-full">
       <Image
         alt="image"
-        src="/images/featureImages/newsScreenShot1.png"
+        src="/images/featureImages/newsScreenshot1.png"
         width={500}
         height={420}
         className="w-92 h-full"
