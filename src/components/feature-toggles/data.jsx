@@ -16,13 +16,14 @@ import {
 import { Image } from "../shared/image";
 
 const UserAccountComponent = () => {
-
   return (
     <div className="h-full w-full">
       <Image
         alt="image"
-        src="/images/featureImages/loginScreenShot1.png"       
+        src="/images/featureImages/loginScreenShot1.png"
         className="w-92 h-full"
+        width={500}
+        height={420}
       />
     </div>
   );
@@ -31,15 +32,16 @@ const UserAccountComponent = () => {
 const KanbanComponent = () => {
   return (
     <div className="h-full w-full">
-    <Image
-      alt="image"
-      src="/images/featureImages/newsScreenShot1.png"
-      className="w-92 h-full"
-    />
-  </div>
+      <Image
+        alt="image"
+        src="/images/featureImages/newsScreenShot1.png"
+        width={500}
+        height={420}
+        className="w-92 h-full"
+      />
+    </div>
   );
 };
-
 
 const GanttComponent = () => {
   return (
@@ -58,14 +60,14 @@ const GanttComponent = () => {
 const DocumentationComponent = () => {
   return (
     <div className="h-full w-full">
-    <Image
-      alt="image"
-      src="/images/featureImages/eventFinderScreenShot.png"
-      width={500}
-      height={420}
-      className="w-92 h-full"
-    />
-  </div>
+      <Image
+        alt="image"
+        src="/images/featureImages/eventFinderScreenShot.png"
+        width={500}
+        height={420}
+        className="w-92 h-full"
+      />
+    </div>
   );
 };
 
