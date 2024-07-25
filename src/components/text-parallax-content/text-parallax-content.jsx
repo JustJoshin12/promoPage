@@ -10,7 +10,7 @@ export const TextParallaxContentExample = () => {
   return (
     <section id="forYou" className="bg-cosmic-1 pt-10">
       <TextParallaxContent
-        imgUrl="/images/image.jpg"
+        imgUrl="/images/image7.jpg"
         subheading="Unite"
         heading="Built for all of us."
       >
@@ -20,7 +20,7 @@ export const TextParallaxContentExample = () => {
         />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="/images/image2.jpg"
+        imgUrl="/images/image5.jpg"
         subheading="Quality"
         heading="Never compromise."
       >
