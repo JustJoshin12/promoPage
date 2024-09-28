@@ -23,6 +23,7 @@ const config = {
           deepLavender: '#8E24AA',
           complementaryYellow: '#FDD835',
           complementaryOrange: '#FF7043',
+          cream: '#FFFDE7',
         },
       },
       backgroundImage: {

@@ -8,9 +8,9 @@ import { CtaSection } from "@/components/cta/cta";
 
 export default function Home() {
   return (
-    <main className={`overflow-hidden bg-cosmic-4 font-sans`}>
+    <main className={`bg-cosmic-4 font-sans`}>
       <Hero />
-      <div className="space-y-36 bg-zinc-50 pb-24 pt-24 md:pt-32">
+      <div className="space-y-36 overflow-hidden bg-galactic-cream pb-24 pt-24 md:pt-32 lg:pt-36">
         <FeatureToggles />
         <Supports />
         <TextParallaxContentExample />
