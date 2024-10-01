@@ -76,14 +76,6 @@ const Copy = ({ scrollYProgress }) => {
         releases. Join our community today and never miss out on the anime
         action!
       </p>
-      {/* <div className="flex items-center gap-4">
-        <button className="bg-violet-600 px-4 py-2 font-medium text-white transition-colors hover:bg-violet-600">
-          Try for free
-        </button>
-        <button className="bg-transparent px-4 py-2 font-medium text-stone-950 transition-colors hover:bg-stone-200">
-          Learn about us
-        </button>
-      </div> */}
     </motion.div>
   );
 };
@@ -115,6 +107,8 @@ const Images = ({ scrollYProgress }) => {
     image4: "/images/heroImages/jjkImg.jpg",
     image5: "/images/heroImages/musicImg.png",
     image6: "/images/heroImages/uzumakiImg.jpg",
+    image7: "/images/heroImages/onePieceImg.jpg",
+    image8: "/images/heroImages/blueExorcistImg.jpg"
   }
 
   return (
@@ -134,7 +128,7 @@ const Images = ({ scrollYProgress }) => {
         className="relative z-10 row-span-2"
         style={{
           backgroundImage:
-            `url(${heroImageSources.image1})`,
+            `url(${heroImageSources.image7})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -203,11 +197,3 @@ const Circles = () => (
   </>
 );
 
-// export const Hero = () => {
-//   return (
-//     <section id="hero" className="bg-cosmic-2 border-b-2 relative flex flex-col items-center justify-center px-12 pb-48 pt-12 md:pt-24">
-//       <Copy />
-//       <MockupScreen />
-//     </section>
-//   );
-// };
