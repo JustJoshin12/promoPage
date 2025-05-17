@@ -145,24 +145,12 @@ const navigation = [
 export const Footer = () => {
   return (
     <>
-      <footer className="py-16">
-        <div className="mx-auto flex max-w-7xl flex-col px-2 py-12 md:flex-row md:items-center md:justify-between lg:px-8">
-          <div className="flex justify-center space-x-6 ">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-400 hover:text-gray-500"
-              >
-                <span className="sr-only">{item.name}</span>
-                <item.icon aria-hidden="true" className="h-6 w-6" />
-              </a>
-            ))}
-          </div>
+      <footer>
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-2 py-12 md:items-center lg:px-8">
           <FloatingBottomNav />
           <div className="mt-8 md:order-1 md:mt-0">
             <p className="text-center text-xs leading-5 text-gray-500">
-              &copy; 2020 Your Company, Inc. All rights reserved.
+              &copy; 2025 Anime Event Discovery, Inc. All rights reserved.
             </p>
           </div>
         </div>
