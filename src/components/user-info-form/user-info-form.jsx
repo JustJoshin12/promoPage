@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export const UserInfoForm = () => {
   const router = useRouter();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const { values, handleChange, errors, isValid, resetForm } =
