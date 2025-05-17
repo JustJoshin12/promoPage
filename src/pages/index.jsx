@@ -9,9 +9,10 @@ import { Footer } from "@/components/footer/Footer";
 import { UserInfoForm } from "@/components/user-info-form/user-info-form";
 import { CtaSection } from "@/components/cta/cta";
 
+
 export default function Home() {
   const [showHint, setShowHint] = useState(true);
-
+  
   useEffect(() => {
     // hide after 3.5 seconds
     const timer = setTimeout(() => setShowHint(false), 2500);

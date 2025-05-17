@@ -1,9 +1,13 @@
 import { useFormAndValidation } from "./form-validation";
 import { userInformationApi } from "@/utils/api";
 import { useRouter } from "next/router";
+import DialogPopUp from "../ui/DialogPopUp";
+import { useState } from "react";
 
 export const UserInfoForm = () => {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
@@ -12,10 +16,12 @@ export const UserInfoForm = () => {
     try {
       const response = await userInformationApi(data);
       console.log("Form submission successful:", response);
-      // Redirect to success page after submission
-      // router.push('/success');
+      setIsError(false);
+      setOpen(true);
     } catch (error) {
       console.error("Form submission error:", error);
+      setIsError(true);
+      setOpen;
     }
   };
 
@@ -33,7 +39,7 @@ export const UserInfoForm = () => {
       attendanceFrequency: values.attendanceFrequency,
       comment: values.comment,
     });
-    // resetForm();
+    resetForm();
   };
 
   return (
@@ -160,6 +166,23 @@ export const UserInfoForm = () => {
           </div>
         </div>
       </div>
+      <DialogPopUp
+        open={open}
+        setOpen={setOpen}
+        onClick={() => {
+          setOpen(false);
+          if (isError) {
+            setOpen(false);
+            return;
+          }
+        }}
+        title={isError ? "Submission Failed" : "Submission Successful"}
+        description={
+          isError ? errorMessage : "We've received your message. Thank you!"
+        }
+        buttonText={isError ? "Try Again" : "Thank You"}
+        isError={isError}
+      />
     </section>
   );
 };
