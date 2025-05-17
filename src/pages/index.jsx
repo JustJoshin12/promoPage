@@ -15,7 +15,7 @@ export default function Home() {
   
   useEffect(() => {
     // hide after 3.5 seconds
-    const timer = setTimeout(() => setShowHint(false), 2500);
+    const timer = setTimeout(() => setShowHint(false), 3200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -31,8 +31,8 @@ export default function Home() {
             transition={{ duration: 0.4 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30"
           >
-            <div className="rounded-xl bg-white px-6 py-4 shadow-lg dark:bg-gray-800">
-              <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+            <div className="rounded-xl bg-white px-4 py-4 md:px-6 md:py-4 shadow-lg dark:bg-gray-800">
+              <p className="text-sm text-center md:text-lg font-semibold text-gray-900 dark:text-gray-100">
                 Scroll down to navigate through the website 👇
               </p>
             </div>
