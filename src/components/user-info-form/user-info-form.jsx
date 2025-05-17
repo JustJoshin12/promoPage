@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export const UserInfoForm = () => {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [isError, setIsError] = useState(false);
 
   const { values, handleChange, errors, isValid, resetForm } =
@@ -180,7 +180,7 @@ export const UserInfoForm = () => {
         description={
           isError ? errorMessage : "We've received your message. Thank you!"
         }
-        buttonText={isError ? "Try Again" : "Thank You"}
+        buttonText={isError ? "Try Again" : "Close"}
         isError={isError}
       />
     </section>
