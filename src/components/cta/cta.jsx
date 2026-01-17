@@ -2,28 +2,28 @@ import { Image } from "../shared/image";
 
 export const CtaSection = () => {
   return (
-    <section id="supports" className="overflow-hidden bg-galactic-cream py-20">
+    <section id="supports" className="overflow-hidden py-20">
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               What Events We Support
             </h2>
-            <p className="mt-6 text-base font-bold leading-7 text-gray-600">
-              At Anime Event Discovery, we celebrate the vibrant and diverse
+            <p className="mt-6 text-base font-bold leading-7 text-white">
+              At Nymify, we celebrate the vibrant and diverse
               world of anime by supporting a wide range of events. From
               large-scale anime conventions that bring together fans from all
               over to anime-themed restaurants where you can enjoy
               meals inspired by your favorite shows, we make it easy for you to
               find events that match your interests.
             </p>
-            <p className="mt-6 text-base font-bold leading-7 text-gray-600">
+            <p className="mt-6 text-base font-bold leading-7 text-white">
               We also support exciting anime gaming events, where enthusiasts
               can compete, play, and connect over their favorite games.
               Additionally, our platform features various anime gatherings, such
               as dance and DJ events, that offer unique opportunities to
               socialize and enjoy the anime culture in fun, dynamic settings.
-              Discover and join these events through Anime Event Discovery to
+              Discover and join these events through Nymify to
               immerse yourself fully in the anime world!
             </p>
             

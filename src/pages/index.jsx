@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { FeatureToggles } from "@/components/feature-toggles/FeatureToggles";
+import { DisappearingFeatures } from "@/components/disappearing-features/DisappearingFeatures";
 import { Supports } from "@/components/supports/Supports";
-import { Hero } from "@/components/hero/Hero";
+import { SmoothScrollHero } from "@/components/hero/SmoothScrollHero";
 import { TextParallaxContentExample } from "@/components/text-parallax-content/text-parallax-content";
 import { Footer } from "@/components/footer/Footer";
 import { UserInfoForm } from "@/components/user-info-form/user-info-form";
 import { CtaSection } from "@/components/cta/cta";
+import { EventInsights } from "@/components/event-insights/EventInsights";
+import { IntroSection } from "@/components/intro/IntroSection";
 
 
 export default function Home() {
   const [showHint, setShowHint] = useState(true);
-  
+
   useEffect(() => {
     // hide after 3.5 seconds
     const timer = setTimeout(() => setShowHint(false), 3200);
@@ -20,7 +22,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative bg-cosmic-4 font-sans">
+    <main className="relative font-sans bg-galactic-background text-galactic-text">
       {/* Hint Modal */}
       <AnimatePresence>
         {showHint && (
@@ -40,15 +42,16 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <Hero />
+      <SmoothScrollHero />
+      <IntroSection />
 
-      <div className="space-y-36 overflow-hidden bg-galactic-cream pb-24 pt-24 md:pt-32 lg:pt-36">
-        <FeatureToggles />
+      <div id="features" className="space-y-36 bg-galactic-background pb-4 pt-24 md:pt-28">
+        <DisappearingFeatures />
         <Supports />
+        <EventInsights />
         <TextParallaxContentExample />
         <CtaSection />
       </div>
-      <UserInfoForm />
       <Footer />
     </main>
   );

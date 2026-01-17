@@ -65,7 +65,7 @@ export const data = [
     cardTitle:
       "Join the Ultimate Anime Community Platform and Unlock Exclusive Features!",
     cardSubtitle:
-      "Personalized Event Recommendations, Customizable Profiles, Event Bookmarking, Review System and more! Sign up for a free account on Anime Event Discovery and dive into a world of endless possibilities.",
+      "Personalized Event Recommendations, Customizable Profiles, Event Bookmarking, Review System and more! Sign up for a free account on Nymify and dive into a world of endless possibilities.",
   },
   {
     id: 2,

@@ -68,7 +68,7 @@ const Copy = ({ scrollYProgress }) => {
       className="w-40 h-40 mb-2"
       />
       <h1 className="max-w-xl my-2 text-center text-5xl font-bold text-stone-950 md:text-7xl">
-        Anime Event Discovery
+        Nymify
       </h1>
       <p className="my-6 max-w-xl text-center font-bold text-sm text-stone-900 md:text-base lg:text-lg">
         Explore exciting upcoming anime events near you, read detailed reviews

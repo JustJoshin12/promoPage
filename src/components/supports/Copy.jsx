@@ -9,7 +9,7 @@ export const Copy = ({ selected, setSelected }) => {
         Elevate Your Anime Journey Today
       </h2>
       <p className="mb-6 text-center text-base leading-relaxed md:text-start md:text-lg md:leading-relaxed">
-        Anime Event Discovery revolutionizes your anime experience. Whether
+        Nymify revolutionizes your anime experience. Whether
         you're a seasoned fan or new to anime, our platform connects you with
         local events, vibrant communities, and the latest news. Discover
         meetups, conventions, and screenings tailored to your interests. Stay

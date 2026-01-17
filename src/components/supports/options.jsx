@@ -17,7 +17,7 @@ const Testimonial = ({ imgSrc, name, content }) => (
       exit={{
         y: 0,
       }}
-      className="w-full overflow-hidden rounded-lg border-2 border-zinc-900 bg-white p-8 md:p-12"
+      className="w-full overflow-hidden rounded-lg border-2 border-zinc-700 bg-galactic-darkGray p-8 md:p-12"
     >
       <div className="mb-6 flex items-center gap-6">
         <div className="rounded-lg bg-zinc-900">
@@ -53,7 +53,7 @@ const Testimonial = ({ imgSrc, name, content }) => (
             opacity: 0,
           }}
         >
-          <span className="mb-1.5 block text-3xl font-medium">{name}</span>
+          <span className="mb-1.5 block text-3xl font-medium text-galactic-text">{name}</span>
         </motion.div>
       </div>
       <motion.p
@@ -69,7 +69,7 @@ const Testimonial = ({ imgSrc, name, content }) => (
           y: -12,
           opacity: 0,
         }}
-        className="text-xl leading-relaxed"
+        className="text-xl leading-relaxed text-gray-400"
       >
         {content}
       </motion.p>

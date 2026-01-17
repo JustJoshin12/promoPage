@@ -149,8 +149,8 @@ export const Footer = () => {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-2 py-12 md:items-center lg:px-8">
           <FloatingBottomNav />
           <div className="mt-8 md:order-1 md:mt-0">
-            <p className="text-center text-xs leading-5 text-gray-500">
-              &copy; 2025 Anime Event Discovery, Inc. All rights reserved.
+            <p className="text-center text-xs leading-5 text-gray-400">
+              &copy; 2025 Nymify, Inc. All rights reserved.
             </p>
           </div>
         </div>

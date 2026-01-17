@@ -8,7 +8,7 @@ import {
 
 export const TextParallaxContentExample = () => {
   return (
-    <section id="forYou" className="bg-cosmic-1 pt-10">
+    <section id="forYou" className="bg-galactic-background pt-10">
       <TextParallaxContent
         imgUrl="/images/image7.jpg"
         subheading="Unite"
@@ -16,7 +16,7 @@ export const TextParallaxContentExample = () => {
       >
         <ExampleContent
           title="Bringing the Anime Community Together"
-          context="At Anime Event Discovery, our mission is to bring anime fans together, creating a space where every enthusiast feels at home. We celebrate the love for anime by connecting people, sharing experiences, and building a vibrant, united community."
+          context="At Nymify, our mission is to bring anime fans together, creating a space where every enthusiast feels at home. We celebrate the love for anime by connecting people, sharing experiences, and building a vibrant, united community."
         />
       </TextParallaxContent>
       <TextParallaxContent
@@ -121,9 +121,9 @@ const OverlayCopy = ({ subheading, heading }) => {
 
 const ExampleContent = ({ title, context }) => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">{title}</h2>
+    <h2 className="col-span-1 text-3xl font-bold text-galactic-text md:col-span-4">{title}</h2>
     <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-galactic-background md:text-2xl">{context}</p>
+      <p className="mb-4 text-xl text-white md:text-2xl">{context}</p>
       <IconColumn />
     </div>
   </div>
@@ -157,7 +157,7 @@ const IconColumn = () => {
                 className="h-8 w-8 flex-shrink-0 text-indigo-600"
               />
               <div className="ml-4 flex flex-auto flex-col-reverse">
-                <h3 className="font-medium text-gray-900">{perk.name}</h3>
+                <h3 className="font-medium text-galactic-text">{perk.name}</h3>
               </div>
             </div>
           </div>
