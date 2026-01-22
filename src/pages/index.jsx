@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Head from "next/head";
 
 import { DisappearingFeatures } from "@/components/disappearing-features/DisappearingFeatures";
 import { Supports } from "@/components/supports/Supports";
@@ -11,6 +12,10 @@ import { CtaSection } from "@/components/cta/cta";
 import { EventInsights } from "@/components/event-insights/EventInsights";
 import { IntroSection } from "@/components/intro/IntroSection";
 
+const SITE_URL = "https://nymify-promopage.vercel.app";
+const SITE_NAME = "Nymify";
+const SITE_DESCRIPTION = "Discover,create, engage, and share anime-related events. Connect with fellow anime fans, find local meetups, conventions, and create unforgettable experiences.";
+const OG_IMAGE = `${SITE_URL}/images/metadataimg.png`; 
 
 export default function Home() {
   const [showHint, setShowHint] = useState(true);
@@ -22,8 +27,38 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative font-sans bg-galactic-background text-galactic-text">
-      {/* Hint Modal */}
+    <>
+      <Head>
+        {/* Primary Meta Tags */}
+        <title>{SITE_NAME} - Find Anime Events Near You</title>
+        <meta name="title" content={`${SITE_NAME} - Find Anime Events Near You`} />
+        <meta name="description" content={SITE_DESCRIPTION} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:title" content={`${SITE_NAME} - Find Anime Events Near You`} />
+        <meta property="og:description" content={SITE_DESCRIPTION} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content={SITE_NAME} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={SITE_URL} />
+        <meta name="twitter:title" content={`${SITE_NAME} - Find Anime Events Near You`} />
+        <meta name="twitter:description" content={SITE_DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        {/* Additional SEO */}
+        <meta name="robots" content="index, follow" />
+        <meta name="keywords" content="anime events, anime conventions, anime meetups, cosplay events, anime community, anime discovery" />
+        <link rel="canonical" href={SITE_URL} />
+      </Head>
+
+      <main className="relative font-sans bg-galactic-background text-galactic-text">
+        {/* Hint Modal */}
       <AnimatePresence>
         {showHint && (
           <motion.div
@@ -53,6 +88,7 @@ export default function Home() {
         <CtaSection />
       </div>
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }

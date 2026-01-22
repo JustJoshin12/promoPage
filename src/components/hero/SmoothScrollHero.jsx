@@ -6,8 +6,21 @@ import {
   useTransform,
 } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Image } from "../shared/image";
+
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  return isMobile;
+};
 
 const SECTION_HEIGHT = 1500;
 
@@ -104,12 +117,6 @@ const CenterImage = () => {
 
   const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
 
-  const backgroundSize = useTransform(
-    scrollY,
-    [0, SECTION_HEIGHT + 500],
-    ["100%", "100%"]
-  );
-
   const opacity = useTransform(
     scrollY,
     [SECTION_HEIGHT, SECTION_HEIGHT + 500],
@@ -121,7 +128,7 @@ const CenterImage = () => {
       className="sticky top-0 h-screen w-full"
       style={{
         clipPath,
-        backgroundSize,
+        backgroundSize: "cover",
         opacity,
         backgroundImage: "url(/images/animeScene.jpg)",
         backgroundPosition: "center",
@@ -133,51 +140,63 @@ const CenterImage = () => {
 
 const ParallaxImages = () => {
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
+    <div className="mx-auto max-w-5xl px-4 pt-[200px] md:pt-[200px]">
       <ParallaxImg
         src="/images/heroImages/cosplayImg.jpg"
         alt="Cosplay event"
-        start={-200}
-        end={200}
-        className="w-1/3"
+        start={-100}
+        end={100}
+        startMd={-200}
+        endMd={200}
+        className="w-1/2 md:w-1/3"
       />
       <ParallaxImg
         src="/images/heroImages/gamingImg.jpg"
         alt="Gaming event"
-        start={200}
-        end={-250}
-        className="mx-auto w-2/3"
+        start={100}
+        end={-125}
+        startMd={200}
+        endMd={-250}
+        className="mx-auto w-3/4 md:w-2/3"
       />
       <ParallaxImg
         src="/images/heroImages/uzumakiImg.jpg"
         alt="Anime artwork"
-        start={-200}
-        end={200}
-        className="ml-auto w-1/3"
+        start={-100}
+        end={100}
+        startMd={-200}
+        endMd={200}
+        className="ml-auto w-1/2 md:w-1/3"
       />
       <ParallaxImg
         src="/images/heroImages/onePieceImg.jpg"
         alt="One Piece event"
         start={0}
-        end={-500}
-        className="ml-24 w-5/12"
+        end={-200}
+        startMd={0}
+        endMd={-500}
+        className="ml-4 md:ml-24 w-1/2 md:w-5/12"
       />
     </div>
   );
 };
 
-const ParallaxImg = ({ className, alt, src, start, end }) => {
+const ParallaxImg = ({ className, alt, src, start, end, startMd, endMd }) => {
   const ref = useRef(null);
+  const isMobile = useIsMobile();
+  
+  const effectiveStart = isMobile ? start : (startMd ?? start);
+  const effectiveEnd = isMobile ? end : (endMd ?? end);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: [`${start}px end`, `end ${end * -1}px`],
+    offset: [`${effectiveStart}px end`, `end ${effectiveEnd * -1}px`],
   });
 
   const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
   const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
 
-  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
+  const y = useTransform(scrollYProgress, [0, 1], [effectiveStart, effectiveEnd]);
   const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
 
   return (
