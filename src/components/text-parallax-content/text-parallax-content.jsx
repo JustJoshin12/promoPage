@@ -16,7 +16,7 @@ export const TextParallaxContentExample = () => {
       >
         <ExampleContent
           title="Bringing the Anime Community Together"
-          context="At Nymify, our mission is to bring anime fans together, creating a space where every enthusiast feels at home. We celebrate the love for anime by connecting people, sharing experiences, and building a vibrant, united community."
+          context="Anime fans deserve a place where they can find each other — not just online, but at real events. Nymify makes it easier to find local meetups, share what you love, and show up for the culture."
         />
       </TextParallaxContent>
       <TextParallaxContent
@@ -25,8 +25,8 @@ export const TextParallaxContentExample = () => {
         heading="Never compromise."
       >
         <ExampleContent
-          title="Excellence in Every Detail"
-          context="We are committed to delivering the highest quality experience for our users. We never compromise on our standards, ensuring that every event, update, and interaction meets the expectations of our vibrant anime community."
+          title="We Don't Ship Half-Baked"
+          context="Every feature we release has to actually work for the people using it — fans looking for events, creators trying to get noticed, and organizers who need things to run smooth. If it doesn't hold up, it doesn't ship."
         />
       </TextParallaxContent>
       <TextParallaxContent
@@ -34,7 +34,7 @@ export const TextParallaxContentExample = () => {
         subheading="Innovative"
         heading="Dress for the best."
       >
-        <ExampleContent title="Embrace Innovation: Always at the Forefront" context="We're dedicated to providing you with the latest features and tools to elevate your anime experience.We continually strive to enhance your experience, ensuring you always have the best at your fingertips." />
+        <ExampleContent title="Always Building What's Next" context="We're always working on new ways to help fans discover events and help creators reach their audience. If there's something the community needs, we're building it." />
       </TextParallaxContent>
     </section>
   );
@@ -148,7 +148,7 @@ const IconColumn = () => {
   return (
     <div className="">
       <h2 className="sr-only">Our perks</h2>
-      <div className="mx-auto max-w-7xl divide-y divide-gray-200 lg:flex lg:justify-center lg:divide-x lg:divide-y-0 lg:py-8">
+      <div className="mx-auto max-w-7xl divide-y divide-gray-700 lg:flex lg:justify-center lg:divide-x lg:divide-y-0 lg:py-8">
         {perks.map((perk, perkIdx) => (
           <div key={perkIdx} className="py-8 lg:w-1/3 lg:flex-none lg:py-0">
             <div className="mx-auto flex max-w-xs items-center px-4 lg:max-w-none lg:px-8">

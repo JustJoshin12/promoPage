@@ -8,22 +8,16 @@ const features = [
   },
   {
     icon: FiCalendar,
-    title: "Create and manage events with ease",
+    title: "Post events and keep your attendees in the loop",
   },
   {
     icon: FiBarChart2,
-    title: "Track engagement and growth in real time",
+    title: "See who's interested, who's attending, and how your events are doing",
   },
   {
     icon: FiUsers,
     title: "Built for fans, creators, and communities",
   },
-];
-
-const stats = [
-  { value: "2.5K+", label: "Events" },
-  { value: "50K+", label: "Fans" },
-  { value: "120+", label: "Cities" },
 ];
 
 const containerVariants = {
@@ -82,15 +76,14 @@ export const IntroSection = () => {
             {/* Description */}
             <motion.div variants={itemVariants} className="space-y-4 text-gray-400">
               <p className="text-lg leading-relaxed">
-                Nymify is a platform where anime fans discover events near them — and creators 
-                bring their ideas to life with tools that make organizing, growing, and tracking 
-                events effortless.
+                Nymify is where anime fans find events near them — and where creators post events,
+                reach the right people, and actually get them through the door.
               </p>
               <p className="text-base leading-relaxed">
-                From conventions and cosplay meetups to watch parties and local gatherings, 
-                Nymify helps fans find what's happening — and helps creators turn passion into 
-                real-world experiences. Create events, reach the right audience, and watch your 
-                community grow, all in one place.
+                From conventions and cosplay meetups to watch parties and local gatherings,
+                Nymify helps fans find what's happening — and helps creators get the word out
+                and bring people together. Post your event, share it with local fans, and see
+                who's coming.
               </p>
             </motion.div>
 
@@ -119,33 +112,6 @@ export const IntroSection = () => {
                 alt="Anime event crowd with vibrant lights"
                 className="h-[400px] w-full object-cover md:h-[500px] lg:h-[600px]"
               />
-              
-              {/* Stats Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 z-20 p-6">
-                <div className="flex justify-around rounded-xl border border-white/10 bg-black/60 backdrop-blur-md p-6">
-                  {stats.map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="text-center"
-                    >
-                      <p className={`text-2xl font-bold md:text-3xl ${
-                        index === 0 
-                          ? "text-red-400" 
-                          : index === 1 
-                          ? "text-cyan-400" 
-                          : "text-yellow-400"
-                      }`}>
-                        {stat.value}
-                      </p>
-                      <p className="text-sm text-gray-400">{stat.label}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Decorative elements */}

@@ -6,21 +6,8 @@ import {
   useTransform,
 } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { Image } from "../shared/image";
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
-  return isMobile;
-};
 
 const SECTION_HEIGHT = 1500;
 
@@ -42,54 +29,20 @@ export const SmoothScrollHero = () => {
 
 const TitleSection = () => {
   return (
-    <div className="relative flex flex-col items-center overflow-hidden bg-galactic-background px-6 py-10 text-center md:px-10 md:py-20">
-      {/* Decorative gradient orbs */}
-      <div className="pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full bg-purple-400/20 blur-3xl" />
-      <div className="pointer-events-none absolute -right-32 -bottom-32 h-64 w-64 rounded-full bg-pink-400/20 blur-3xl" />
-      
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="relative"
-      >
-        <div className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-xl opacity-60" />
-        <Image
-          alt="Website logo"
-          src="/images/logo2.png"
-          className="relative mb-6 h-28 w-28 rounded-full shadow-2xl ring-4 ring-purple-500/30 md:h-32 md:w-32"
-        />
-      </motion.div>
-      
-      <motion.h1
-        initial={{ y: 30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-purple-400 bg-clip-text text-5xl font-black uppercase tracking-tight text-transparent drop-shadow-lg md:text-7xl lg:text-8xl"
-      >
-        Nymify
-      </motion.h1>
-      
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="my-4 h-1 w-24 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 md:w-32"
+    <div className="flex flex-col items-center bg-galactic-background pt-10 px-6 py-10 text-center md:px-10 md:py-20">
+      <Image
+        alt="Website logo"
+        src="/images/logo2.png"
+        className="mb-4 h-24 w-24 rounded-full shadow-lg shadow-galactic-primary/50"
       />
-      
-      <motion.p
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        viewport={{ once: true }}
-        className="mt-2 max-w-lg text-base font-medium text-gray-400 md:text-lg"
-      >
-        Explore exciting upcoming anime events near you, read detailed reviews
-        from fellow fans, and stay updated with the latest anime news!
-      </motion.p>
+      <h1 className="text-4xl font-black uppercase tracking-tight text-galactic-accent drop-shadow-lg md:text-6xl lg:text-7xl">
+        Nymify
+      </h1>
+      <h2 className="text-2xl font-bold py-2 md:py-4">Discover anime events. Create anime culture.</h2>
+      <p className="mt-4 max-w-md text-sm font-semibold text-galactic-text md:text-base">
+        Anime events shouldn’t be this hard to find — or this hard to host.
+        Nymify helps fans find what's happening nearby — and helps creators fill the room.
+      </p>
     </div>
   );
 };
@@ -104,7 +57,7 @@ const HeroSection = () => {
     >
       <CenterImage />
       <ParallaxImages />
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-transparent to-galactic-background" />
+      <div className="absolute bottom-0 left-0 right-0 pb-4 bg-galactic-background" />
     </div>
   );
 };
@@ -117,6 +70,12 @@ const CenterImage = () => {
 
   const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
 
+  const backgroundSize = useTransform(
+    scrollY,
+    [0, SECTION_HEIGHT + 500],
+    ["100%", "100%"]
+  );
+
   const opacity = useTransform(
     scrollY,
     [SECTION_HEIGHT, SECTION_HEIGHT + 500],
@@ -128,7 +87,7 @@ const CenterImage = () => {
       className="sticky top-0 h-screen w-full"
       style={{
         clipPath,
-        backgroundSize: "cover",
+        backgroundSize,
         opacity,
         backgroundImage: "url(/images/animeScene.jpg)",
         backgroundPosition: "center",
@@ -140,63 +99,51 @@ const CenterImage = () => {
 
 const ParallaxImages = () => {
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px] md:pt-[200px]">
+    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
         src="/images/heroImages/cosplayImg.jpg"
         alt="Cosplay event"
-        start={-100}
-        end={100}
-        startMd={-200}
-        endMd={200}
-        className="w-1/2 md:w-1/3"
+        start={-200}
+        end={200}
+        className="w-1/3"
       />
       <ParallaxImg
         src="/images/heroImages/gamingImg.jpg"
         alt="Gaming event"
-        start={100}
-        end={-125}
-        startMd={200}
-        endMd={-250}
-        className="mx-auto w-3/4 md:w-2/3"
+        start={200}
+        end={-250}
+        className="mx-auto w-2/3"
       />
       <ParallaxImg
         src="/images/heroImages/uzumakiImg.jpg"
         alt="Anime artwork"
-        start={-100}
-        end={100}
-        startMd={-200}
-        endMd={200}
-        className="ml-auto w-1/2 md:w-1/3"
+        start={-200}
+        end={200}
+        className="ml-auto w-1/3"
       />
       <ParallaxImg
         src="/images/heroImages/onePieceImg.jpg"
         alt="One Piece event"
         start={0}
-        end={-200}
-        startMd={0}
-        endMd={-500}
-        className="ml-4 md:ml-24 w-1/2 md:w-5/12"
+        end={-500}
+        className="ml-24 w-5/12"
       />
     </div>
   );
 };
 
-const ParallaxImg = ({ className, alt, src, start, end, startMd, endMd }) => {
+const ParallaxImg = ({ className, alt, src, start, end }) => {
   const ref = useRef(null);
-  const isMobile = useIsMobile();
-  
-  const effectiveStart = isMobile ? start : (startMd ?? start);
-  const effectiveEnd = isMobile ? end : (endMd ?? end);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: [`${effectiveStart}px end`, `end ${effectiveEnd * -1}px`],
+    offset: [`${start}px end`, `end ${end * -1}px`],
   });
 
   const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
   const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
 
-  const y = useTransform(scrollYProgress, [0, 1], [effectiveStart, effectiveEnd]);
+  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
   const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
 
   return (

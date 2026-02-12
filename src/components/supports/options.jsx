@@ -94,7 +94,7 @@ export const OPTIONS = [
       <Testimonial
         imgSrc="/images/animeIconImages/icon3.webp"
         name="Event Organizers"
-        content="Easily promote your events, ensuring they reach the right audience and create memorable experiences for attendees."
+        content="Get your event in front of local fans who actually want to come — not just followers, real attendees."
       />
     ),
   },
@@ -104,7 +104,7 @@ export const OPTIONS = [
       <Testimonial
         imgSrc="/images/animeIconImages/icon4.jpg"
         name="Finding Local Fans"
-        content="It can be hard to meet fellow anime enthusiasts in your area. Our platform helps you find local events and meetups where you can make new friends."
+        content="It can be hard to meet fellow anime enthusiasts in your area. Nymify helps you find events and meetups nearby where you can actually meet other fans."
       />
     ),
   },
@@ -124,7 +124,7 @@ export const OPTIONS = [
       <Testimonial
         imgSrc="/images/animeIconImages/icon7.jpg"
         name="Lack of Information"
-        content="Finding all the details about an event can be challenging. Our platform provides comprehensive event listings."
+        content="Finding all the details about an event can be a pain. Nymify gives you dates, locations, hosts, and what to expect — all in one spot."
       />
     ),
   },
@@ -154,7 +154,7 @@ export const OPTIONS = [
       <Testimonial
         imgSrc="/images/animeIconImages/icon.png"
         name="Personalized Choices"
-        content=" With so many events, it can be hard to decide which to attend. Personalized recommendations simplify this process."
+        content="With so many events out there, it's hard to pick. We surface the ones that match what you're actually into."
       />
     ),
   },
@@ -164,7 +164,7 @@ export const OPTIONS = [
       <Testimonial
         imgSrc="/images/animeIconImages/icon8.png"
         name="Event Analytics"
-        content="Track event performance and optimize future events."
+        content="See what worked, what didn't, and use that to make your next event even better."
       />
     ),
   },

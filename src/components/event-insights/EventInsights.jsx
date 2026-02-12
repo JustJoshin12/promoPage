@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const featurePills = [
-  { icon: "⚡", label: "Live Engagement Tracking" },
+  { icon: "⚡", label: "Live Attendance Updates" },
   { icon: "📊", label: "Creator-Owned Data" },
-  { icon: "📈", label: "Actionable Metrics" },
+  { icon: "📈", label: "What's Working, What's Not" },
   { icon: "✨", label: "No Setup Required" },
 ];
 
@@ -108,9 +108,9 @@ export const EventInsights = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-black mb-6"
           >
-            <span className="text-white">Turn Events Into </span>
+            <span className="text-white">See How Your Events Are </span>
             <span className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
-              Insights
+              Landing
             </span>
           </motion.h2>
 
@@ -121,7 +121,7 @@ export const EventInsights = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-2xl mx-auto mb-10"
           >
-            Track attendance, engagement, and growth with real-time analytics built for creators — not spreadsheets.
+            Know how many people signed up, who showed up, and what's working — no spreadsheets needed.
           </motion.p>
 
           {/* Feature Pills */}

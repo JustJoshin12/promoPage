@@ -46,10 +46,10 @@ export const UserInfoForm = () => {
     <section id="pre-register">
       <div className="flex min-h-full flex-1 flex-col justify-center py-20 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="mt-6 text-center text-xl font-bold leading-9 tracking-tight text-galactic-text md:text-2xl xl:text-3xl">
+          <h2 className="mt-6 text-center text-xl font-bold leading-9 tracking-tight text-gray-900 md:text-2xl xl:text-3xl">
             Your Thoughts. Your Voice.
           </h2>
-          <p className="px-4 pt-6 font-semibold text-gray-400 md:px-0">
+          <p className="px-4 pt-6 font-semibold md:px-0">
             We'd love to hear from you! Share your ideas for things you'd wish
             to see.
           </p>

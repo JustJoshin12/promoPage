@@ -4,7 +4,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 const featureData = [
   {
     title: "Create Events",
-    image: "/images/demoImages/hostevent.png",
+    image: "/images/demoImages/eventcreation.png",
   },
   {
     title: "Discover Events",
@@ -53,7 +53,7 @@ const featureItems = [
       </svg>
     ),
     title: "Create Events",
-    description: "Host cosplay meetups, anime screenings, or conventions with our intuitive event builder.",
+    description: "Set up a cosplay meetup, a screening night, or a full convention — and start getting signups right away.",
     gradient: "from-fuchsia-500 to-violet-600",
   },
   {
@@ -73,7 +73,7 @@ const featureItems = [
       </svg>
     ),
     title: "Rank & Review",
-    description: "Rate events and build your reputation as a trusted community member.",
+    description: "Rate events you've attended so other fans know what to expect.",
     gradient: "from-amber-500 to-orange-600",
   },
 ];
@@ -94,7 +94,7 @@ const Copy = () => {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
           </span>
-          All-in-One Platform
+          Made for Anime Events
         </span>
       </motion.div>
 
@@ -106,7 +106,7 @@ const Copy = () => {
         viewport={{ once: true }}
         className="mb-8 text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight"
       >
-        <span className="text-galactic-text">Your Hub for</span>
+        <span className="text-galactic-text">Your Home for</span>
         <br />
         <span className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
           Anime Events

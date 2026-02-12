@@ -13,7 +13,7 @@ export const Hero = () => {
   return (
     <>
       {/* <Nav scrollYProgress={scrollYProgress} /> */}
-      <section ref={targetRef} id="hero" className="h-[350vh] bg-cosmic-5 pb-10">
+      <section ref={targetRef} id="hero" className="h-[350vh] bg-galactic-background pb-10">
         <div className="sticky top-0 z-0 grid h-screen grid-cols-3 grid-rows-3 gap-4 overflow-hidden p-4">
           <Copy scrollYProgress={scrollYProgress} />
           <Images scrollYProgress={scrollYProgress} />
@@ -59,22 +59,21 @@ const Copy = ({ scrollYProgress }) => {
         opacity: copyOpacity,
         y: copyY,
       }}
-      className="absolute z-30 flex h-screen w-full flex-col items-center justify-center px-8"
+      className="absolute z-30 flex h-screen w-full flex-col items-center justify-center px-8 bg-galactic-background"
     >
-      
+
       <Image
-      alt={`Image of website logo`}
-      src={image}
-      className="w-40 h-40 mb-2"
+        alt={`Image of website logo`}
+        src={image}
+        className="w-40 h-40 mb-2"
       />
       <h1 className="max-w-xl my-2 text-center text-5xl font-bold text-stone-950 md:text-7xl">
         Nymify
       </h1>
+      <h2>Discover anime events. Create anime culture.</h2>
       <p className="my-6 max-w-xl text-center font-bold text-sm text-stone-900 md:text-base lg:text-lg">
-        Explore exciting upcoming anime events near you, read detailed reviews
-        from fellow fans, and stay updated with the latest anime news and
-        releases. Join our community today and never miss out on the anime
-        action!
+        Anime events shouldn’t be this hard to find — or this hard to host.
+        Nymify helps fans find what's happening nearby — and helps creators fill the room.
       </p>
     </motion.div>
   );
@@ -116,7 +115,7 @@ const Images = ({ scrollYProgress }) => {
       <motion.div
         className="relative z-10 col-span-2"
         style={{
-          backgroundImage:  `url(${heroImageSources.image3})`,
+          backgroundImage: `url(${heroImageSources.image3})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -153,7 +152,7 @@ const Images = ({ scrollYProgress }) => {
         className="relative z-10"
         style={{
           backgroundImage:
-           `url(${heroImageSources.image2})`,
+            `url(${heroImageSources.image2})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -166,7 +165,7 @@ const Images = ({ scrollYProgress }) => {
         className="relative z-10"
         style={{
           backgroundImage:
-           `url(${heroImageSources.image4})`,
+            `url(${heroImageSources.image4})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -178,7 +177,7 @@ const Images = ({ scrollYProgress }) => {
         className="relative z-10"
         style={{
           backgroundImage:
-           `url(${heroImageSources.image5})`,
+            `url(${heroImageSources.image5})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
