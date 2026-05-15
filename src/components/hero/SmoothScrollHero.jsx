@@ -6,21 +6,25 @@ import {
   useTransform,
 } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Image } from "../shared/image";
 
-const SECTION_HEIGHT = 1500;
+const DESKTOP_SECTION_HEIGHT = 1500;
+const MOBILE_SECTION_HEIGHT = 900;
 
 export const SmoothScrollHero = () => {
+  const isMobile = useIsMobile();
+  const sectionHeight = isMobile ? MOBILE_SECTION_HEIGHT : DESKTOP_SECTION_HEIGHT;
+
   return (
-    <div className="bg-galactic-background">
+    <div id="hero" className="bg-galactic-background">
       <ReactLenis
         root
         options={{
           lerp: 0.05,
         }}
       >
-        <HeroSection />
+        <HeroSection sectionHeight={sectionHeight} />
         <TitleSection />
       </ReactLenis>
     </div>
@@ -29,7 +33,7 @@ export const SmoothScrollHero = () => {
 
 const TitleSection = () => {
   return (
-    <div className="flex flex-col items-center bg-galactic-background pt-10 px-6 py-10 text-center md:px-10 md:py-20">
+    <div className="flex flex-col items-center bg-galactic-background px-6 pb-10 pt-2 text-center md:px-10 md:py-20">
       <Image
         alt="Website logo"
         src="/images/logo2.png"
@@ -49,36 +53,36 @@ const TitleSection = () => {
 
 
 
-const HeroSection = () => {
+const HeroSection = ({ sectionHeight }) => {
   return (
     <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
+      style={{ height: `calc(${sectionHeight}px + 100vh)` }}
       className="relative w-full"
     >
-      <CenterImage />
+      <CenterImage sectionHeight={sectionHeight} />
       <ParallaxImages />
       <div className="absolute bottom-0 left-0 right-0 pb-4 bg-galactic-background" />
     </div>
   );
 };
 
-const CenterImage = () => {
+const CenterImage = ({ sectionHeight }) => {
   const { scrollY } = useScroll();
 
-  const clip1 = useTransform(scrollY, [0, 1500], [25, 0]);
-  const clip2 = useTransform(scrollY, [0, 1500], [75, 100]);
+  const clip1 = useTransform(scrollY, [0, sectionHeight], [25, 0]);
+  const clip2 = useTransform(scrollY, [0, sectionHeight], [75, 100]);
 
   const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
 
   const backgroundSize = useTransform(
     scrollY,
-    [0, SECTION_HEIGHT + 500],
+    [0, sectionHeight + 500],
     ["100%", "100%"]
   );
 
   const opacity = useTransform(
     scrollY,
-    [SECTION_HEIGHT, SECTION_HEIGHT + 500],
+    [sectionHeight, sectionHeight + 500],
     [1, 0]
   );
 
@@ -97,36 +101,50 @@ const CenterImage = () => {
   );
 };
 
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+};
+
 const ParallaxImages = () => {
+  const isMobile = useIsMobile();
+  const scale = isMobile ? 0.35 : 1;
+
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
+    <div className="mx-auto max-w-5xl px-4 pt-[100px] md:pt-[200px]">
       <ParallaxImg
         src="/images/heroImages/cosplayImg.jpg"
         alt="Cosplay event"
-        start={-200}
-        end={200}
+        start={-200 * scale}
+        end={200 * scale}
         className="w-1/3"
       />
       <ParallaxImg
         src="/images/heroImages/gamingImg.jpg"
         alt="Gaming event"
-        start={200}
-        end={-250}
+        start={200 * scale}
+        end={-250 * scale}
         className="mx-auto w-2/3"
       />
       <ParallaxImg
         src="/images/heroImages/uzumakiImg.jpg"
         alt="Anime artwork"
-        start={-200}
-        end={200}
+        start={-200 * scale}
+        end={200 * scale}
         className="ml-auto w-1/3"
       />
       <ParallaxImg
         src="/images/heroImages/onePieceImg.jpg"
         alt="One Piece event"
         start={0}
-        end={-500}
-        className="ml-24 w-5/12"
+        end={-500 * scale}
+        className="ml-6 md:ml-24 w-5/12"
       />
     </div>
   );

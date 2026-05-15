@@ -2,23 +2,35 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Head from "next/head";
 
-import { DisappearingFeatures } from "@/components/disappearing-features/DisappearingFeatures";
-import { Supports } from "@/components/supports/Supports";
+import { ProductFeatureShowcase } from "@/components/product-feature-showcase/ProductFeatureShowcase";
+import { AudienceBenefitsSection } from "@/components/audience-benefits-section/AudienceBenefitsSection";
 import { SmoothScrollHero } from "@/components/hero/SmoothScrollHero";
-import { TextParallaxContentExample } from "@/components/text-parallax-content/text-parallax-content";
+import { BrandValuesSection } from "@/components/brand-values-section/BrandValuesSection";
 import { Footer } from "@/components/footer/Footer";
-import { UserInfoForm } from "@/components/user-info-form/user-info-form";
-import { CtaSection } from "@/components/cta/cta";
-import { EventInsights } from "@/components/event-insights/EventInsights";
+import { SupportedEventTypesSection } from "@/components/supported-event-types-section/SupportedEventTypesSection";
+import { AnalyticsShowcase } from "@/components/analytics-showcase/AnalyticsShowcase";
 import { IntroSection } from "@/components/intro/IntroSection";
+import { NotifyInterestForm } from "@/components/notify-interest-form/NotifyInterestForm";
+import {
+  FeaturesPurposeToggle,
+  FEATURE_PURPOSE,
+} from "@/components/features-purpose-toggle/FeaturesPurposeToggle";
+import { HowDiscoveryWorksSection } from "@/components/how-discovery-works-section/HowDiscoveryWorksSection";
+import { OrganizerFaqSection } from "@/components/organizer-faq-section/OrganizerFaqSection";
+import { AttendeeFaqSection } from "@/components/attendee-faq-section/AttendeeFaqSection";
+import { OrganizerAudienceSection } from "@/components/organizer-audience-section/OrganizerAudienceSection";
+import { OrganizerPublishingChecklistSection } from "@/components/organizer-publishing-checklist-section/OrganizerPublishingChecklistSection";
+import { NearYouCalendarTeaserSection } from "@/components/near-you-calendar-teaser-section/NearYouCalendarTeaserSection";
 
 const SITE_URL = "https://nymify-promopage.vercel.app";
 const SITE_NAME = "Nymify";
 const SITE_DESCRIPTION = "Discover,create, engage, and share anime-related events. Connect with fellow anime fans, find local meetups, conventions, and create unforgettable experiences.";
 const OG_IMAGE = `${SITE_URL}/images/metadataimg.png`; 
 
+
 export default function Home() {
   const [showHint, setShowHint] = useState(true);
+  const [featuresPurpose, setFeaturesPurpose] = useState(FEATURE_PURPOSE.attend);
 
   useEffect(() => {
     // hide after 3.5 seconds
@@ -80,14 +92,42 @@ export default function Home() {
       <SmoothScrollHero />
       <IntroSection />
 
-      <div id="features" className="space-y-36 bg-galactic-background pb-4 pt-24 md:pt-28">
-        <DisappearingFeatures />
-        <Supports />
-        <EventInsights />
-        <TextParallaxContentExample />
-        <CtaSection />
+      <div id="features" className="space-y-24 bg-galactic-background pb-4 pt-24 md:pt-28 md:space-y-28">
+        <FeaturesPurposeToggle value={featuresPurpose} onChange={setFeaturesPurpose} />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={featuresPurpose}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -14 }}
+            transition={{ duration: 0.35 }}
+            className="flex flex-col space-y-36"
+          >
+            {featuresPurpose === FEATURE_PURPOSE.attend ? (
+              <>
+                <ProductFeatureShowcase purpose="attend" />
+                <HowDiscoveryWorksSection />
+                <NearYouCalendarTeaserSection />
+                <SupportedEventTypesSection />
+                <AudienceBenefitsSection purpose="attend" />
+                <AttendeeFaqSection />
+              </>
+            ) : (
+              <>
+                <ProductFeatureShowcase purpose="create" />
+                <OrganizerAudienceSection />
+                <AudienceBenefitsSection purpose="create" />
+                <AnalyticsShowcase />
+                <OrganizerPublishingChecklistSection />
+                <OrganizerFaqSection />
+              </>
+            )}
+          </motion.div>
+        </AnimatePresence>
+        <BrandValuesSection />
       </div>
-      <Footer />
+      <NotifyInterestForm />
+      <Footer purpose={featuresPurpose} />
       </main>
     </>
   );

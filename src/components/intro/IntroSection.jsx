@@ -42,7 +42,7 @@ const itemVariants = {
 
 export const IntroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-galactic-background py-16 md:py-24 lg:py-32">
+    <section id="intro" className="relative overflow-hidden bg-galactic-background py-16 md:py-24 lg:py-32">
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute -left-64 top-1/4 h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[120px]" />
       <div className="pointer-events-none absolute -right-64 bottom-1/4 h-[500px] w-[500px] rounded-full bg-pink-600/10 blur-[120px]" />
