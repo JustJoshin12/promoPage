@@ -11,7 +11,7 @@ const initialFormValues = {
 
 const emailValidationPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const SECTION_IMAGE_SRC = "/images/form-img.jpg";
+const SECTION_IMAGE_SRC = "/images/cosplayImages/img6.jpg";
 
 const containerVariants = {
   hidden: { opacity: 0 },

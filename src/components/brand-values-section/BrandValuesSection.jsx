@@ -10,7 +10,7 @@ export const BrandValuesSection = () => {
   return (
     <section id="community-values" className="bg-galactic-background pt-10">
       <TextParallaxContent
-        imgUrl="/images/image7.jpg"
+        imgUrl="/images/cosplayImages/img8.jpg"
         subheading="Unite"
         heading="Built for all of us."
       >

@@ -119,7 +119,7 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[100px] md:pt-[200px]">
       <ParallaxImg
-        src="/images/heroImages/cosplayImg.jpg"
+        src="/images/cosplayImages/img2.jpg"
         alt="Cosplay event"
         start={-200 * scale}
         end={200 * scale}
@@ -140,7 +140,7 @@ const ParallaxImages = () => {
         className="ml-auto w-1/3"
       />
       <ParallaxImg
-        src="/images/heroImages/onePieceImg.jpg"
+        src="/images/cosplayImages/img1.jpg"
         alt="One Piece event"
         start={0}
         end={-500 * scale}

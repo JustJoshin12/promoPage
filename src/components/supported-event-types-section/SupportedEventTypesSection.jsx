@@ -32,7 +32,7 @@ export const SupportedEventTypesSection = () => {
             <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
               <Image
                 alt=""
-                src="/images/ctaImages/image3.jpg"
+                src="/images/cosplayImages/img3.jpg"
                 className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
               />
             </div>
